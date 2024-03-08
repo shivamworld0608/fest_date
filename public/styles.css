@@ -161,8 +161,8 @@ body {
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
+    background-color: white;
+    color: red;
   }
   
   .button3:hover {
