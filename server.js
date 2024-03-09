@@ -33,6 +33,13 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
+app.get('/matchlist.html', (req, res) => {
+  res.sendFile(__dirname + '/matchlist.html');
+});
+app.get('/submitted', (req, res) => {
+  res.sendFile(__dirname + '/submita.html');
+});
+
 
 app.post('/submit', async (req, res) => {
   const {  username,roll,email,branch,year,ig,crushn,crushr,crushy,crushb } = req.body;
@@ -40,7 +47,7 @@ app.post('/submit', async (req, res) => {
 
   try {
     await newMessage.save();
-    res.redirect('/');
+    res.redirect('/submitted');
   } catch (err) {
     res.status(500).send(err.message);
   }
